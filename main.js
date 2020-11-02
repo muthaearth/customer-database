@@ -48,7 +48,6 @@ function capitalizeArray(arr) {
 
 // functions using customer objects from customers array in customers.js
 function customerName(customer) {
-    // let components = [customer['name'].title + '.', customer['name'].first, customer['name'].last]
     let components = [customer['name'].first, customer['name'].last]
     components = capitalizeArray(components)
     return components.join(' ')
@@ -66,16 +65,9 @@ function customerLocation(customer) {
     return `${street}` + '<br>' + `${city}, ${state} ${postcode}`
 }
 
-function customerDOB(customer) {
-    let dob = customer.dob.slice(0, 10)
-    let dobDate = moment(dob).format('MMM Do, YYYY')
-    return `DOB: ${dobDate}`
-}
-
 function customerSince(customer) {
     let reg = customer.registered.slice(0, 10)
     let regDate = moment(reg).format('MMM D, YYYY')
-    //let regDate = moment(reg).format('MMM Do, YYYY')
     return `Customer since: ${regDate}`
 }
 
